@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+  <style type="text/css">
+
+    body {
+      margin: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+    }
+/*    div.background {
+    height: 100vh;
+    width: 60vh;
+    background-color: black;
+    position: absolute;
+    z-index: 2; 
+  }
+
+    div.background2 {
+    height: 100vh;
+    width: 60vh;
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    margin-left: 70%;
+  }*/
+
+    img {
+      /*margin-left: 30%; */
+      position: absolute;
+      height: 100vh;
+      width: auto;
+     /*-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */*/
+    /*filter: grayscale(100%); */
+    }
+
+    .bodyparts {
+      position: absolute;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+
+    }
+
+    #gum-local{
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    }
+
+    .face-wrapper {
+      height: 100vh;
+      width: 80vh;
+      position: relative;
+    }
+
+    .hair {
+      height: 30vh;
+      z-index: 3; 
+    }
+
+    .hair img {
+    display: none;
+  }
+
+    .eyes {
+      height: 55vh;
+    }
+
+    .eyes img {
+      display: none;
+    }
+
+    .nose {
+      height: 70vh;
+    }
+  
+    .nose img {
+    display: none;
+  }
+
+  .mouth{
+     height: 100vh;
+  }
+
+  .mouth img {
+    display: none; 
+  }
+
+  #origin {
+    display: block;
+  }
+
+  h1 {
+    color: white; 
+   /*position: absolute; */
+  /*left: 400px; */
+    padding-top: 13px; 
+    margin: 0;
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    /*z-index: 3; */
+    font-size: 3vh; 
+    word-spacing: 3vh;
+    line-height: 3vh;
+
+}
+
+  </style>
+
+</head>
+
+<body>
+  
+<!--     <div class="background">
+    </div>
+    <div class="background2"> -->
+      <!-- </div> -->
+
+  <h1>click the eyes to add yourself</h1>
+  <div class="face-wrapper">
+    <div class="bodyparts mouth" id="mouth">
+      <img src="portraits/bigamy2.jpg">
+      <img src="portraits/dude2.jpg">
+      <img src="portraits/george2.jpg">
+       <img src="portraits/girl2.jpg" id="origin"> 
+    </div>
+    <div class="bodyparts nose" id="nose">
+      <img src="portraits/bigamy2.jpg">
+      <img src="portraits/dude2.jpg">
+      <img src="portraits/george2.jpg">
+       <img src="portraits/girl2.jpg">
+    </div>
+    <div class="bodyparts eyes" id="eyes">
+      <img src="portraits/bigamy2.jpg" class="eyes-Img">
+      <img src="portraits/dude2.jpg " class="eyes-Img">
+      <img src="portraits/george2.jpg" class="eyes-Img">
+       <img src="portraits/girl2.jpg" class="eyes-Img">
+       <video id="gum-local" autoplay="" playsinline=""></video>
+    </div>
+    <div class="bodyparts hair" id="hair">
+      <img src="portraits/bigamy2.jpg">
+      <img src="portraits/dude2.jpg">
+      <img src="portraits/george2.jpg">
+      <img src="portraits/girl2.jpg">
+    </div>
+  </div>
+  <h1>click the eyes to add yourself</h1>
+
+  <script type="text/javascript">
+    var eyes = document.getElementById("eyes");
+    var eyeImages = document.querySelectorAll("#eyes img");
+
+    var randomImage = function() {
+      var randomNumber = Math.floor(Math.random() * eyeImages.length);
+
+      // if(randomNumber =)
+       return randomNumber; 
+    }
+
+
+
+    eyes.addEventListener("mouseover", function(){
+      console.log("here")
+      for(var i = 0; i < eyeImages.length; i++) {
+        eyeImages[i].style.display = "none";
+      }
+      eyeImages[randomImage()].style.display = "unset";
+    });
+
+
+    var nose = document.getElementById("nose");
+    var noseImages = document.querySelectorAll("#nose img");
+
+    nose.addEventListener("mouseover", function(){
+      console.log("here")
+      for(var i = 0; i < noseImages.length; i++) {
+        noseImages[i].style.display = "none";
+      }
+      noseImages[randomImage()].style.display = "unset";
+    });
+
+
+    var hair = document.getElementById("hair");
+    var hairImages = document.querySelectorAll("#hair img");
+
+    hair.addEventListener("mouseover", function(){
+      console.log("here")
+      for(var i = 0; i < hairImages.length; i++) {
+        hairImages[i].style.display = "none";
+      }
+      hairImages [randomImage()].style.display = "unset";
+    });
+
+
+    var mouth = document.getElementById("mouth");
+    var mouthImages = document.querySelectorAll("#mouth img");
+
+    mouth.addEventListener("mouseover", function(){
+      console.log("here")
+      for(var i = 0; i < mouthImages.length; i++) {
+        mouthImages[i].style.display = "none";
+      }
+      mouthImages[randomImage()].style.display = "unset";
+    });
+
+
+
+  </script>
+
+  <style type="text/css">
+/*  h1 {
+color: white; 
+   position: absolute; 
+  left: 400px; 
+    padding-top: 13px; 
+ margin: 0 auto; 
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    z-index: 3; 
+    font-size: 22px; 
+    word-spacing: 23px;
+
+}
+
+  h2 {
+   color: white; 
+   position: absolute; 
+    right: 400px; 
+    padding-top: 13px; 
+    margin: 0 auto; 
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    z-index: 3; 
+    font-size: 22px; 
+    word-spacing: 23px;
+*/
+}
+  </style>
+
+<!-- <div id="container">
+
+   
+    <div id="errorMsg"></div>
+
+</div> -->
+
+ <script type="text/javascript"> 
+
+    /*
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+ */
+
+ var isClicked = 2
+'use strict';
+
+// Put variables in global scope to make them available to the browser console.
+const constraints = window.constraints = {
+  audio: false,
+  video: true
+};
+
+function handleSuccess(stream) {
+  const video = document.querySelector('video');
+  const videoTracks = stream.getVideoTracks();
+  console.log('Got stream with constraints:', constraints);
+  console.log(`Using video device: ${videoTracks[0].label}`);
+  window.stream = stream; // make variable available to browser console
+  video.srcObject = stream;
+  // document.querySelector("#gum-local").style.zIndex = 1
+  var x = document.getElementsByClassName("eyes-Img");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.zIndex = -1;
+  }
+}
+
+function handleError(error) {
+  if (error.name === 'ConstraintNotSatisfiedError') {
+    let v = constraints.video;
+    errorMsg(`The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`);
+  } else if (error.name === 'PermissionDeniedError') {
+    errorMsg('Permissions have not been granted to use your camera and ' +
+      'microphone, you need to allow the page access to your devices in ' +
+      'order for the demo to work.');
+  }
+  errorMsg(`getUserMedia error: ${error.name}`, error);
+}
+
+function errorMsg(msg, error) {
+  const errorElement = document.querySelector('#errorMsg');
+  errorElement.innerHTML += `<p>${msg}</p>`;
+  if (typeof error !== 'undefined') {
+    console.error(error);
+  }
+}
+
+async function init(e) {
+    if (isClicked % 2 == 0){
+        console.log(isClicked);
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(stream);
+            e.target.disabled = true;
+            document.querySelector("#gum-local").style.visibility = "visible";
+        } catch (e) {
+            handleError(e);
+        }
+        isClicked = isClicked + 1;
+    }
+    else {
+        document.querySelector("#gum-local").style.visibility = "hidden";
+        var x = document.getElementsByClassName("eyes-Img");
+        var j;
+        for (j = 0; j < x.length; j++) {
+            x[j].style.zIndex = 0;
+        }
+        isClicked = isClicked + 1;
+    }
+  }
+
+document.querySelector('#eyes').addEventListener('click', e => init(e));
+
+
+</script>
+
+
+</body>
+</html>

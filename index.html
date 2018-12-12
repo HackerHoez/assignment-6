@@ -10,11 +10,16 @@
 <head>
   <style type="text/css">
 
-    body {
+   body {
       margin: 0;
-      background-color: black;
+      background-image: url('newbackground5.jpg');
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-position: 0% 0%;
+  background-size: 100% 100%;
       display: flex;
       justify-content: center;
+
     }
 /*    div.background {
     height: 100vh;
@@ -106,11 +111,30 @@
    /*position: absolute; */
   /*left: 400px; */
     padding-top: 13px; 
+    padding-bottom: 13px;
     margin: 0;
     writing-mode: vertical-rl; 
     text-orientation: upright;
     /*z-index: 3; */
-    font-size: 3vh; 
+    font-size: 2.3vh; 
+    word-spacing: 3vh;
+    line-height: 3vh;
+
+
+}
+
+
+  h2 {
+    color: white; 
+   /*position: absolute; */
+  /*left: 400px; */
+    padding-top: 13px; 
+    padding-bottom: 13px;
+    margin: 0;
+    writing-mode: vertical-lr; 
+    text-orientation: upright;
+    /*z-index: 3; */
+    font-size: 2.3vh; 
     word-spacing: 3vh;
     line-height: 3vh;
 
@@ -127,7 +151,7 @@
     <div class="background2"> -->
       <!-- </div> -->
 
-  <h1>click the eyes to add yourself</h1>
+  <h1>click the eyes to reveal your disguise</h1>
   <div class="face-wrapper">
     <div class="bodyparts mouth" id="mouth">
       <img src="portraits/bigamy2.jpg">
@@ -155,7 +179,7 @@
       <img src="portraits/girl2.jpg">
     </div>
   </div>
-  <h1>click the eyes to add yourself</h1>
+  <h2>click the eyes to reveal your disguise</h2>
 
   <script type="text/javascript">
     var eyes = document.getElementById("eyes");
@@ -337,7 +361,3 @@ document.querySelector('#eyes').addEventListener('click', e => init(e));
 
 
 </script>
-
-
-</body>
-</html>
